@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script is displaying a clock
+H=0
+M=1
+
+while [ $H -le 12 ]
+do
+	echo "Hour: $H"
+	while [ $M -le 59 ]
+	do
+		echo $M
+		M=$((M+1))
+	done
+	if [ $M -eq 60 ]
+	then
+		M=1
+	fi
+	H=$((H+1))
+done
