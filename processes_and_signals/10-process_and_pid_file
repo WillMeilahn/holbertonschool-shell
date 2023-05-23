@@ -9,10 +9,10 @@ rmfile_n_exit()
 }
 trap "echo 'Y U no love me?!'" SIGINT
 trap "echo 'I hate the kill command'; rmfile_n_exit" SIGTERM
-trap "echo 'I hate the kill command'; rmfile_n_exit" SIGQUIT
+trap "rmfile_n_exit" SIGQUIT
 
 
-echo $$ >> /var/run/holbertonscript.pid
+echo $$ > /var/run/holbertonscript.pid
 while (true)
 do
     echo 'To infinity and beyond'
